@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #ede5e5;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar-left h1 {
+  margin: 0;
+}
+
+.navbar-right span {
+  margin-right: 10px;
+}
+
+.navbar-right button {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.navbar-right button:hover {
+  background-color: #45a049;
+}
+
+.link{
+  text-decoration: none;
+  margin-right: 5px;
+}
