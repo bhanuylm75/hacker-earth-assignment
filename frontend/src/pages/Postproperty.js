@@ -18,9 +18,9 @@ const Postproperty = () => {
   })
   const submit=async ()=>{
     try{
-      const res=await axios.post("http://localhost:3009/postproperty",form)
+      const res=await axios.post("http://54.176.16.18:3009/postproperty",form)
       console.log(res)
-      navigate("/")
+      navigate("/homepage")
 
     }
     catch(e){
