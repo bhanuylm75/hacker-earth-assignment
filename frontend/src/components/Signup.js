@@ -17,7 +17,7 @@ const Signup = () => {
     e.preventDefault();
     console.log(form)
     try{
-      const response=await axios.post("http://54.176.16.18:3009/api/signup",form)
+      const response=await axios.post("http://localhost:3009/api/signup",form)
         console.log(response)
         if(response?.data?.status==="pass"){
           console.log("bdb")

@@ -31,7 +31,7 @@ const Allproperties = () => {
     "owner":"6651d43a56bc11c1618ea5c6"
   }]
   const getpro= async ()=>{
-    const res= await axios.get("http://54.176.16.18:3009/allpro")
+    const res= await axios.get("http://localhost:3009/allpro")
     console.log(res?.data)
     const data=res?.data
     setpro(data)

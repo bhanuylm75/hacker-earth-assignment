@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import User from "./models/user.js"
 import RentalProperty from "./models/property.js";
 import cors from "cors"
+import path from 'path';
 
 const app = express();
 mongoose.connect("mongodb+srv://bhanuylm01:KlR9eNh0v156JdJA@cluster0.uwjuthw.mongodb.net/")
@@ -17,6 +18,23 @@ app.get('/', (req, res) => {
 app.listen(3009, () => {
   console.log("Server running at http://localhost:3009");
 });
+
+const xyz="production"
+
+const __dirname1 = path.resolve();
+
+if (xyz === "production") {
+  app.use(express.static(path.join(__dirname1, "/frontend/build")));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname1, "frontend", "build", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running..");
+  });
+}
+
 
 app.get("api/signup/",async (req,res)=>{
   const { name, email, password } = req.body;
