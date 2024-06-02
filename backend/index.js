@@ -11,9 +11,6 @@ mongoose.connect("mongodb+srv://bhanuylm01:KlR9eNh0v156JdJA@cluster0.uwjuthw.mon
 
 app.use(express.json())
 app.use(cors());
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
-});
 
 app.listen(3009, () => {
   console.log("Server running at http://localhost:3009");
@@ -21,19 +18,16 @@ app.listen(3009, () => {
 
 const xyz="production"
 
-const __dirname1 = path.resolve();
 
-if (xyz === "production") {
-  app.use(express.static(path.join(__dirname1, "/frontend/build")));
 
-  app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname1, "frontend", "build", "index.html"))
-  );
-} else {
-  app.get("/", (req, res) => {
-    res.send("API is running..");
-  });
-}
+const _dirname = path.dirname("")
+const buildPath = path.join(_dirname  , "../frontend/build");
+
+app.use(express.static(buildPath))
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(_dirname, 'frontend', 'build', 'index.html'));;
+});
+
 
 
 app.get("api/signup/",async (req,res)=>{
